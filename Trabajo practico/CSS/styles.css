@@ -1,0 +1,248 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Gwendolyn&family=Libre+Baskerville:ital@0;1&family=PT+Serif&family=Parisienne&display=swap');
+
+:root{
+    --padding-container: 100px 0; /* que tenga 100px arriba y cero a los costados*/
+    --color-title: #001a49; /*color para los titulos*/
+/*  Custom Properties = variables Css contienen valores especificos que se pueden volver a utilizar*/
+}
+
+body{
+font-family: 'Gwendolyn', cursive;
+font-family: 'Libre Baskerville', serif;
+font-family: 'PT Serif', serif;
+}
+.container{ /* container= contenedor de la pag.*/
+    width: 90%; /* ancho de un elemento*/
+    max-width: 1200px; /* ancho maximo*/
+    margin: 0 auto; /* centrar verticalmente */
+    overflow: hidden; /* todo lo que sale de ese elemento se esconda */
+    padding: var(--padding-container); /* variable custom properties esto hara que tenga 100px arriba y cero a los costados*/
+}
+
+.hero{
+    width: 100%; /* poner la imagen al 100% del navegador de fondo*/
+    height: 100vh; /* 100 % del alto de la pantalla*/
+    min-height: 600px; /* alto minimo de  ..*/
+    max-height: 800px; /* un alto maximo de  .... todo esto es para un problema que surge con los IPAD*/
+    position: relative; /* para que un elemento de posicione absolutamente a este contenedor*/
+    display: grid; /* para crear dos filas*/
+    grid-template-rows: 100px 1fr; /*la primera que tome el 100px y la otra el sobrante de los 1000 px*/
+    color: #ffffff /* todos los ementos dentro de hero tengan un color blanco*/
+}
+.hero::before{
+    content: "";
+    position: absolute; /* que se posicione absolutamente a su elemento padre que es hero*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100% ), url("../imagen/zenmed3.jpg");
+    background-size: cover; /* para que se adpte a la pagina*/
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 99%, 0 80%); /* pegamos desde la pagina clyppi*/
+    z-index: -1; /* para que se vea el texto*/
+}
+
+.nav{
+    --padding-container: 0;
+    height: 100%; /* alto*/
+    display: flex; /* para poner los elementos uno al lado del otro*/
+    align-items: center; /* centrar verticalmente*/
+}
+
+.nav__title{
+    font-weight: 300; /* para que tenga un peso de fuente mas delgado*/
+}
+.nav__link{
+    margin-left: auto; /*para que se pasen a la derecha*/
+    padding: 0;
+    display: grid; /* una grid dentro de otra grid*/
+    grid-auto-flow: column; /*flujo de columnas*/
+    grid-auto-columns: max-content;
+    gap: 2em; /*espaciado em= tamaño de etra de su elemento padre */
+}
+.nav__items{
+    list-style: none; /* para que quite el estilo de listas*/
+}
+
+.nav__links{ /* es el UL */
+    color: #ffffff;
+    text-decoration: none;
+
+}
+
+.nav__menu{ /* contiene el menu hamburguesa*/
+    margin-left: auto; 
+    cursor: pointer; /* para que cada vez que pasas el mouse se active el cursor*/
+    display: none; /* para que desaparezca hasta los dispositivos moviles*/
+}
+
+.nav__img{
+    display: block;
+    width: 30px;
+}
+.nav__cerrar{
+    display: var(--show, none); /* custom property no declarada*/
+}
+/*hero container */
+
+.hero__container{
+    max-width: 800px;
+    --padding-container: 0; /* padding :relleno que se crea alrededor del contenido de un elemento*/
+    display: grid;
+    grid-auto-rows: max-content; /* row: filas*/
+    align-content: center; /* contenido aliniado verticalmente, */
+    gap: 1em; /* tenga un espaciado de ..*/
+    padding-bottom: 100px; /* para que no se pegue al recorte*/
+    text-align: center;
+}
+.hero__title{
+    font-size: 2rem; /*  1 rem :equivale a 16 px*/
+}
+
+.hero__paragraph{
+    margin-bottom: 20px;
+
+}
+
+.cta{
+    display: inline-block;
+    background-color: #b7a572;
+    justify-self: center; /* esto hara que solo se ejecute en su contenido*/
+    color: #562222;
+    text-decoration: none;
+    padding: 13px 22px; /* 13px hacia abajo y 22 px a los costados*/
+    border-radius: 30px; /*para que el boton sea redondeado*/
+}
+
+/* about */
+
+.about{
+    text-align: center;
+}
+.subtitulo{
+    color: #481d1d;
+    font-size: 2rem;
+    margin-bottom: 25px;
+
+}
+.about__paragraph{
+    line-height: 1.7;
+}
+.about__main{
+    padding-top: 80px;
+    display: grid;
+    width: 90%;
+    margin: 0 auto;
+    gap: 1em;
+    overflow: hidden;
+    grid-template-columns: repeat(auto-fit, minmax(260px, auto));
+}
+
+.about__imagenes{
+    display: grid;
+    gap: 1em;
+    justify-items: center;
+    width: 260px;
+    overflow: hidden;
+    margin: 0 auto;
+
+}
+
+.about__imagen{
+    width: 200px;
+
+}
+
+/* conocer */
+
+.conocer{
+background-color: #e5e5f7;
+background-image:  radial-gradient(#444cf7 0.5px, transparent 0.5px), radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+background-size: 20px 20px;
+background-position: 0 0,10px 10px;
+overflow: hidden;
+}
+.conocer__container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    align-items: center;
+
+}
+.conocer__foto{
+    max-width: 500px;
+
+}
+.conocer__paragraph{
+    line-height: 1.7;
+    margin-bottom: 15PX;
+}
+.conocer__img{
+    width: 100%;
+    display: block;
+}
+/*precios*/
+
+.precio{
+    text-align: center;
+}
+.precio__tabla{
+    padding-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5em;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+.precio__elemento{
+    background-color: #e5e5f7;
+    text-align: center;
+    border-radius: 10px;
+    width: 330px;
+    padding: 40px;
+    --color-plan: #696871;
+    --color-precio: #1d293f;
+    --bg-cta: #ffff;
+    --color-cta: #5454d4;
+    --color-items: #696871;
+
+}
+
+.precio__elemento--best{
+    background-color: #ff7143;
+    --color-plan: rgba(255 255 255 / 75%);
+    --color-precio: #ffff;
+    --bg-cta: #ffff;
+    --color-cta: #5454d4;
+    --color-items: #696871;
+}
+.precio__name{
+    color: var(--color-plan);
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+.precio__precio{
+    font-size: 2.5rem;
+    color: var(--color-precio);
+}
+.precio__items{
+    margin-top: 35px;
+    display: grid;
+    gap: 1em;
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    color: var(--color-items);
+}
+.precio__cta{
+    
+    display: block;
+    padding: 20px o;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: var(--bg-cta);
+    font-weight: 600;
+    box-shadow: 0 0 1px rgba(0,0,0,.5);
+}
