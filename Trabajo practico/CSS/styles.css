@@ -1,80 +1,76 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Gwendolyn&family=Libre+Baskerville:ital@0;1&family=PT+Serif&family=Parisienne&display=swap');
-
 :root{
-    --padding-container: 100px 0; /* que tenga 100px arriba y cero a los costados*/
-    --color-title: #001a49; /*color para los titulos*/
-/*  Custom Properties = variables Css contienen valores especificos que se pueden volver a utilizar*/
+    --padding-container: 100px 0; 
+    --color-title: #001a49;
+
 }
 
 body{
-font-family: 'Gwendolyn', cursive;
-font-family: 'Libre Baskerville', serif;
-font-family: 'PT Serif', serif;
+font-family: Arial, Helvetica, sans-serif;
 }
-.container{ /* container= contenedor de la pag.*/
-    width: 90%; /* ancho de un elemento*/
-    max-width: 1200px; /* ancho maximo*/
-    margin: 0 auto; /* centrar verticalmente */
-    overflow: hidden; /* todo lo que sale de ese elemento se esconda */
-    padding: var(--padding-container); /* variable custom properties esto hara que tenga 100px arriba y cero a los costados*/
+.container{
+    width: 90%; 
+    max-width: 1200px;
+    margin: 0 auto; 
+    overflow: hidden;
+    padding: var(--padding-container); 
 }
 
 .hero{
-    width: 100%; /* poner la imagen al 100% del navegador de fondo*/
-    height: 100vh; /* 100 % del alto de la pantalla*/
-    min-height: 600px; /* alto minimo de  ..*/
-    max-height: 800px; /* un alto maximo de  .... todo esto es para un problema que surge con los IPAD*/
-    position: relative; /* para que un elemento de posicione absolutamente a este contenedor*/
-    display: grid; /* para crear dos filas*/
-    grid-template-rows: 100px 1fr; /*la primera que tome el 100px y la otra el sobrante de los 1000 px*/
-    color: #ffffff /* todos los ementos dentro de hero tengan un color blanco*/
+    width: 100%; 
+    height: 100vh;
+    min-height: 600px; 
+    max-height: 800px; 
+    position: relative;
+    display: grid; 
+    grid-template-rows: 100px 1fr; 
+    color: #ffffff 
 }
 .hero::before{
     content: "";
-    position: absolute; /* que se posicione absolutamente a su elemento padre que es hero*/
+    position: absolute; 
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100% ), url("../imagen/zenmed3.jpg");
-    background-size: cover; /* para que se adpte a la pagina*/
-    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 99%, 0 80%); /* pegamos desde la pagina clyppi*/
-    z-index: -1; /* para que se vea el texto*/
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 99%, 0 80%);
+    z-index: -1; 
 }
 
 .nav{
     --padding-container: 0;
-    height: 100%; /* alto*/
-    display: flex; /* para poner los elementos uno al lado del otro*/
-    align-items: center; /* centrar verticalmente*/
+    height: 100%; 
+    display: flex;
+    align-items: center; 
 }
 
 .nav__title{
-    font-weight: 300; /* para que tenga un peso de fuente mas delgado*/
+    font-weight: 300; 
 }
 .nav__link{
-    margin-left: auto; /*para que se pasen a la derecha*/
+    margin-left: auto;
     padding: 0;
-    display: grid; /* una grid dentro de otra grid*/
-    grid-auto-flow: column; /*flujo de columnas*/
+    display: grid; 
+    grid-auto-flow: column; 
     grid-auto-columns: max-content;
-    gap: 2em; /*espaciado em= tamaño de etra de su elemento padre */
+    gap: 2em; 
 }
 .nav__items{
-    list-style: none; /* para que quite el estilo de listas*/
+    list-style: none;
 }
 
-.nav__links{ /* es el UL */
+.nav__links{ 
     color: #ffffff;
     text-decoration: none;
 
 }
 
-.nav__menu{ /* contiene el menu hamburguesa*/
+.nav__menu{
     margin-left: auto; 
-    cursor: pointer; /* para que cada vez que pasas el mouse se active el cursor*/
-    display: none; /* para que desaparezca hasta los dispositivos moviles*/
+    cursor: pointer; 
+    display: none; 
 }
 
 .nav__img{
@@ -82,22 +78,22 @@ font-family: 'PT Serif', serif;
     width: 30px;
 }
 .nav__cerrar{
-    display: var(--show, none); /* custom property no declarada*/
+    display: var(--show, none);
 }
-/*hero container */
+
 
 .hero__container{
     max-width: 800px;
-    --padding-container: 0; /* padding :relleno que se crea alrededor del contenido de un elemento*/
+    --padding-container: 0; 
     display: grid;
-    grid-auto-rows: max-content; /* row: filas*/
-    align-content: center; /* contenido aliniado verticalmente, */
-    gap: 1em; /* tenga un espaciado de ..*/
-    padding-bottom: 100px; /* para que no se pegue al recorte*/
+    grid-auto-rows: max-content; 
+    align-content: center; 
+    gap: 1em; 
+    padding-bottom: 100px;
     text-align: center;
 }
 .hero__title{
-    font-size: 2rem; /*  1 rem :equivale a 16 px*/
+    font-size: 2rem; 
 }
 
 .hero__paragraph{
@@ -108,11 +104,11 @@ font-family: 'PT Serif', serif;
 .cta{
     display: inline-block;
     background-color: #b7a572;
-    justify-self: center; /* esto hara que solo se ejecute en su contenido*/
+    justify-self: center; 
     color: #562222;
     text-decoration: none;
-    padding: 13px 22px; /* 13px hacia abajo y 22 px a los costados*/
-    border-radius: 30px; /*para que el boton sea redondeado*/
+    padding: 13px 22px; 
+    border-radius: 30px;
 }
 
 /* about */
